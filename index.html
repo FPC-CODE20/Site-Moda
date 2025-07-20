@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marca de roupas premium com design sustentável e atemporal">
+    <title>ÉTHER | Moda Sustentável</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="scripts.js" defer></script>
+    <script src="Login.html" defer></script>
+    <script src="login.php"
+    <script src="cadastro.php" defer></script>
+
+    <style>
+        :root {
+            --color-dark: #111827;
+            --color-light: #f3f4f6;
+            --color-gray-800: #1f2937;
+            --color-gray-900: #111827;
+            --color-gray-300: #d1d5db;
+        }
+
+        html {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-image {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('hero-image.jpg');
+            /* Sugestão: adicione uma altura mínima para garantir visibilidade em telas menores */
+            min-height: 80vh;
+        }
+
+        /* Otimização do Dark Mode com variáveis CSS e Tailwind */
+        .dark body {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+        }
+
+        .dark .dark\:bg-dark {
+            background-color: var(--color-dark);
+        }
+
+        .dark .dark\:text-light {
+            color: var(--color-light);
+        }
+
+        .dark .dark\:border-gray-800 {
+            border-color: var(--color-gray-800);
+        }
+
+        .dark .dark\:bg-gray-900 {
+            background-color: var(--color-gray-900);
+        }
+
+        .dark .dark\:text-gray-300 {
+            color: var(--color-gray-300);
+        }
+
+        /* Corrigido: a sintaxe para opacidade estava incorreta */
+        .dark .dark\:bg-opacity-90 {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 antialiased transition-colors duration-300 dark:bg-dark dark:text-light">
+    <div class="bg-black text-white text-center py-2 px-4 text-sm dark:bg-gray-800">
+        Frete grátis para compras acima de R$ 300 | Entrega em até 2 dias úteis
+    </div>
+
+    <header
+        class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 dark:bg-gray-900/90 dark:border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <button id="menu-toggle" class="md:hidden text-gray-700 dark:text-gray-300" aria-label="Abrir menu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+
+                <a href="/" class="text-2xl font-semibold tracking-tighter dark:text-white"
+                    aria-label="Página inicial da ÉTHER">ÉTHER</a>
+
+                <nav class="hidden md:flex space-x-8" aria-label="Navegação principal">
+                    <a href="#"
+                        class="text-sm uppercase tracking-wider hover:text-gray-600 transition dark:hover:text-gray-400 dark:text-gray-300">Novidades</a>
+                    <a href="#"
+                        class="text-sm uppercase tracking-wider hover:text-gray-600 transition dark:hover:text-gray-400 dark:text-gray-300">Mulher</a>
+                    <a href="#"
+                        class="text-sm uppercase tracking-wider hover:text-gray-600 transition dark:hover:text-gray-400 dark:text-gray-300">Homem</a>
+                    <a href="#"
+                        class="text-sm uppercase tracking-wider hover:text-gray-600 transition dark:hover:text-gray-400 dark:text-gray-300">Sustentabilidade</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle"
+                        class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                        aria-label="Alternar tema">
+                        <i class="fas fa-moon hidden dark:block" aria-hidden="true"></i>
+                        <i class="fas fa-sun block dark:hidden" aria-hidden="true"></i>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                        aria-label="Pesquisar">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <button id="user-icon-button"
+                        class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                        aria-label="Abrir login">
+                        <i class="far fa-user" aria-hidden="true"></i>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white relative"
+                        aria-label="Carrinho de compras">
+                        <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+                        <span
+                            class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center dark:bg-white dark:text-black">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <nav id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-100 mt-4 dark:border-gray-800"
+                aria-label="Navegação móvel">
+                <div class="flex flex-col space-y-4">
+                    <a href="#"
+                        class="text-sm uppercase tracking-wider hover:text-gray-600 transition dark:hover:text-gray-400 dark:text-gray-300">Novidades</a>
+                    <a href="#"
+                        class="text-sm uppercase tracking-wider hover:text-gray-600 transition dark:hover:text-gray-400 dark:text-gray-300">Mulher</a>
+                    <a href="#"
+                        class="text-sm uppercase tracking-wider hover:text-gray-600 transition dark:hover:text-gray-400 dark:text-gray-300">Homem</a>
+                    <a href="#"
+                        class="text-sm uppercase tracking-wider hover:text-gray-600 transition dark:hover:text-gray-400 dark:text-gray-300">Sustentabilidade</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-image bg-cover bg-center flex items-center">
+            <div class="container mx-auto px-4">
+                <div class="max-w-md text-white">
+                    <h1 class="text-4xl md:text-5xl font-light mb-4">Coleção Outono/Inverno 2025</h1>
+                    <p class="text-lg mb-6">Peças desenhadas para durar, feitas com materiais sustentáveis.</p>
+                    <a href="#"
+                        class="bg-white text-black px-6 py-3 inline-block text-sm uppercase tracking-wider hover:bg-gray-100 transition dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">Compre
+                        agora</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl text-center mb-12 font-light dark:text-white">DESTAQUES DA TEMPORADA</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="group relative">
+                        <div class="aspect-square bg-gray-100 overflow-hidden dark:bg-gray-800">
+                            <img src="product1.jpg" alt="Blazer em linho bege"
+                                class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-sm font-medium dark:text-gray-300">
+                                <a href="#"> <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Blazer em Linho
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 text-sm dark:text-gray-400">R$ 599,90</p>
+                        </div>
+                        <button
+                            class="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 dark:bg-white dark:text-black z-10">Adicionar
+                            ao carrinho</button>
+                    </div>
+
+                    <div class="group relative">
+                        <div class="aspect-square bg-gray-100 overflow-hidden dark:bg-gray-800">
+                            <img src="product2.jpg" alt="Vestido midi preto"
+                                class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-sm font-medium dark:text-gray-300">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Vestido Midi
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 text-sm dark:text-gray-400">R$ 459,90</p>
+                        </div>
+                        <button
+                            class="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 dark:bg-white dark:text-black z-10">Adicionar
+                            ao carrinho</button>
+                    </div>
+
+                    <div class="group relative">
+                        <div class="aspect-square bg-gray-100 overflow-hidden dark:bg-gray-800">
+                            <img src="product3.jpg" alt="Calça wide leg jeans"
+                                class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-sm font-medium dark:text-gray-300">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Calça Wide Leg
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 text-sm dark:text-gray-400">R$ 389,90</p>
+                        </div>
+                        <button
+                            class="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 dark:bg-white dark:text-black z-10">Adicionar
+                            ao carrinho</button>
+                    </div>
+
+                    <div class="group relative">
+                        <div class="aspect-square bg-gray-100 overflow-hidden dark:bg-gray-800">
+                            <img src="product4.jpg" alt="Camiseta oversized branca"
+                                class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-sm font-medium dark:text-gray-300">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Camiseta Oversized
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 text-sm dark:text-gray-400">R$ 199,90</p>
+                        </div>
+                        <button
+                            class="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 dark:bg-white dark:text-black z-10">Adicionar
+                            ao carrinho</button>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#"
+                        class="border border-black px-8 py-3 inline-block text-sm uppercase tracking-wider hover:bg-black hover:text-white transition dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">Ver
+                        todos os produtos</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                        <h2 class="text-2xl mb-4 font-light dark:text-white">NOSSO COMPROMISSO COM A SUSTENTABILIDADE
+                        </h2>
+                        <p class="mb-6 dark:text-gray-300">Na ÉTHER, acreditamos que a moda pode e deve ser feita de
+                            forma responsável. Utilizamos materiais orgânicos, reciclados e processos de produção que
+                            minimizam o impacto ambiental.</p>
+                        <a href="#"
+                            class="text-sm uppercase tracking-wider border-b border-black pb-1 hover:text-gray-600 transition dark:border-white dark:text-gray-300 dark:hover:text-gray-400">Saiba
+                            mais</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="aspect-video bg-gray-200 dark:bg-gray-700">
+                            <img src="sustainability.jpg"
+                                alt="Mulher costurando em um ambiente com tecidos naturais, representando processos sustentáveis."
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white border-t border-gray-100 dark:bg-gray-900 dark:border-gray-800"
+            aria-labelledby="newsletter-heading">
+            <div class="container mx-auto px-4 text-center">
+                <h2 id="newsletter-heading" class="text-2xl mb-4 font-light dark:text-white">JUNTE-SE À NOSSA COMUNIDADE
+                </h2>
+                <p class="max-w-lg mx-auto mb-8 dark:text-gray-300">Receba novidades, lançamentos exclusivos e 10% de
+                    desconto na sua primeira compra.</p>
+
+                <form class="max-w-md mx-auto flex">
+                    <label for="email-newsletter" class="sr-only">Seu e-mail</label> <input type="email"
+                        id="email-newsletter" placeholder="Seu e-mail"
+                        class="flex-grow px-4 py-3 border border-gray-300 focus:outline-none focus:border-black dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:border-white"
+                        required>
+                    <button type="submit"
+                        class="bg-black text-white px-6 py-3 text-sm uppercase tracking-wider hover:bg-gray-800 transition dark:bg-white dark:text-black dark:hover:bg-gray-200">Assinar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-12 dark:bg-gray-900" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" class="sr-only">Rodapé</h2>
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg mb-4 font-medium dark:text-white">ÉTHER</h3>
+                    <p class="text-gray-400 text-sm">Moda atemporal com responsabilidade ambiental.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm uppercase tracking-wider mb-4 dark:text-white">Loja</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Novidades</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Mulher</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Homem</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Ofertas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm uppercase tracking-wider mb-4 dark:text-white">Sobre</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#"
