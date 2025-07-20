@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <!-- ... seu <head> atual permanece o mesmo ... -->
+</head>
+<body class="bg-white text-gray-900 antialiased transition-colors duration-300 dark:bg-dark dark:text-light">
+    <!-- ... todo seu conteúdo atual permanece o mesmo até o rodapé ... -->
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-2xl w-full max-w-md relative transform transition-all duration-300 scale-100">
+            <button id="close-login-modal" class="absolute top-3 right-3 text-gray-400 hover:text-gray-800 dark:hover:text-white text-3xl">&times;</button>
+            <h2 class="text-3xl font-bold mb-6 text-center dark:text-white">Bem-vindo de volta!</h2>
+            <form id="login-form" class="space-y-5" method="POST" action="login.php">
+                <input type="email" name="email" placeholder="Seu e-mail" class="w-full px-5 py-3 border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-black" required>
+                <input type="password" name="senha" placeholder="Senha" class="w-full px-5 py-3 border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-black" required>
+                <button type="submit" class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-300">Entrar</button>
+            </form>
+            <p class="text-center text-sm mt-6 dark:text-gray-400">Não tem conta? <a href="#" id="open-register-modal" class="underline font-semibold">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="register-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-2xl w-full max-w-md relative transform transition-all duration-300 scale-100">
+            <button id="close-register-modal" class="absolute top-3 right-3 text-gray-400 hover:text-gray-800 dark:hover:text-white text-3xl">&times;</button>
+            <h2 class="text-3xl font-bold mb-6 text-center dark:text-white">Crie sua conta</h2>
+            <form id="register-form" class="space-y-5" method="POST" action="register.php">
+                <input type="email" name="email" placeholder="Seu e-mail" class="w-full px-5 py-3 border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-black" required>
+                <input type="password" name="senha" placeholder="Senha" class="w-full px-5 py-3 border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-black" required>
+                <button type="submit" class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-300">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts adicionais -->
+    <script>
+        document.getElementById("user-icon-button").addEventListener("click", function () {
+            document.getElementById("login-modal").classList.remove("hidden");
+        });
+
+        document.getElementById("close-login-modal").addEventListener("click", function () {
+            document.getElementById("login-modal").classList.add("hidden");
+        });
+
+        document.getElementById("open-register-modal").addEventListener("click", function () {
+            document.getElementById("login-modal").classList.add("hidden");
+            document.getElementById("register-modal").classList.remove("hidden");
+        });
+
+        document.getElementById("close-register-modal").addEventListener("click", function () {
+            document.getElementById("register-modal").classList.add("hidden");
+        });
+    </script>
+</body>
+</html>
